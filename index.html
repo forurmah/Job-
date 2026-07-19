@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Tracker</title>
+  <link rel="icon" type="image/svg+xml" href="site-icon.svg">
+  <link rel="stylesheet" href="job.css">
+  <script type="module" src="js/tracker.js"></script>
+</head>
+<body>
+  <header>
+    <div class="page-width header-content">
+      <img src="image/job.png" alt="" class="site-logo">
+      <div>
+        <h1>Job Application Tracker</h1>
+        <p>Keep your job search organized in one place.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="dashboard" aria-labelledby="add-application-heading">
+      <h2 id="add-application-heading">Add new application</h2>
+      <form id="appForm">
+        <label for="companyInput">Company</label>
+        <input type="text" id="companyInput" placeholder="e.g. Google" required>
+
+        <label for="positionInput">Position</label>
+        <input type="text" id="positionInput" placeholder="e.g. Frontend Developer" required>
+
+        <label for="statusSelect">Status</label>
+        <select id="statusSelect" required>
+          <option value="" selected disabled>Select status</option>
+          <option value="Applied">Applied</option>
+          <option value="Interview">Interview</option>
+          <option value="Offer">Offer</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+
+        <label for="dateInput">Application date</label>
+        <input type="date" id="dateInput" required>
+
+        <label for="notesInput">Notes <span>(optional)</span></label>
+        <textarea id="notesInput" placeholder="Add any notes about this application..."></textarea>
+        <div class="form-actions">
+          <button type="submit" id="submitBtn">Add application</button>
+          <button type="button" id="cancelEditBtn" hidden>Cancel edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="controls" aria-labelledby="search-filter-heading">
+      <h2 id="search-filter-heading">Search &amp; filter</h2>
+      <div class="search-box">
+        <label for="searchInput">Search by company or position</label>
+        <input type="search" id="searchInput" placeholder="Start typing to search...">
+      </div>
+      <div class="filter-buttons" aria-label="Filter applications by status">
+        <button type="button" class="is-active" data-filter="All">All</button>
+        <button type="button" data-filter="Applied">Applied</button>
+        <button type="button" data-filter="Interview">Interview</button>
+        <button type="button" data-filter="Offer">Offer</button>
+        <button type="button" data-filter="Rejected">Rejected</button>
+      </div>
+    </section>
+
+    <section id="applications" aria-labelledby="applications-heading">
+      <h2 id="applications-heading">Applications</h2>
+      <div id="applicationsContainer" class="application-container"></div>
+    </section>
+  </main>
+</body>
+</html>
