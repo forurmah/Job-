@@ -40,14 +40,6 @@ Then visit:
 http://localhost:8000
 ```
 
-## Day 7 Checklist
-
-- Refactored repeated status logic into one shared constant
-- Improved storage loading so broken saved data does not crash the app
-- Fixed the empty notes display
-- Cleaned up CSS formatting
-- Added project documentation
-
 ## Next Improvements
 
 - Add application counters for each status
