@@ -16,7 +16,7 @@ export function renderApplications(container, applications) {
       <p><strong>Position:</strong> ${escapeHtml(app.position)}</p>
       <p><strong>Status:</strong> ${escapeHtml(app.status)}</p>
       <p><strong>Date:</strong> ${escapeHtml(app.date)}</p>
-      <p><strong>Notes:</strong> ${escapeHtml(app.notes || "")}</p>
+      <p><strong>Notes:</strong> ${escapeHtml(app.notes || "No notes")}</p>
       <div class="card-actions">
         <button type="button" class="edit-btn">Edit</button>
         <button type="button" class="secondary delete-btn">Delete</button>

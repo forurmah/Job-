@@ -1,5 +1,5 @@
 import { loadApplications, saveApplications } from "./storage.js";
-import { getFormValues, isValidApplication } from "./validation.js";
+import { getFormValues, isValidApplication, STATUSES } from "./validation.js";
 import { renderApplications } from "./ui.js";
 
 const form = document.getElementById("appForm");
@@ -22,7 +22,9 @@ function getVisibleApplications() {
   const searchTerm = searchInput.value.trim().toLowerCase();
 
   return applications.filter(application => {
-    const matchesFilter = activeFilter === "All" || application.status === activeFilter;
+    const matchesFilter =
+      activeFilter === "All" ||
+      (STATUSES.includes(activeFilter) && application.status === activeFilter);
     const matchesSearch =
       application.company.toLowerCase().includes(searchTerm) ||
       application.position.toLowerCase().includes(searchTerm);

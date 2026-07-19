@@ -1,4 +1,4 @@
-const STATUSES = ["Applied", "Interview", "Offer", "Rejected"];
+export const STATUSES = ["Applied", "Interview", "Offer", "Rejected"];
 
 export function getFormValues() {
   return {
